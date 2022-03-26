@@ -10,3 +10,4 @@ click on terminal
 Write the following Command :- pip install playsound
 the module will then be downloaded and installed. you can use sound then
 
+Download link :- https://drive.google.com/drive/folders/1z8TriB_HDCLS5erDOrpJGauK721fRU7y?usp=sharing
