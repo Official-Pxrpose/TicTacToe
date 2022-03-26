@@ -60,7 +60,7 @@ elif v=='O':
 else:
     print("Incorrect value of sign given . Program will be terminated")
     if Sound==True:
-        playsound('Audio/program_error.mp3')
+        playsound('program_error.mp3')
     quit()
 
 y=0
@@ -80,17 +80,17 @@ try:
                         if y==1:
                             print("You have won!")
                             if Sound==True:
-                                playsound('Audio/Win.wav')
+                                playsound('Win.wav')
                             quit()
                         elif check==2 and y!=1:
                             print(" It is a draw")
                             if Sound==True:
-                                playsound('Audio/boing.mp3')
+                                playsound('boing.mp3')
                             quit()
                     else:
                         print("Place is occupied")
                         if Sound==True:
-                            playsound('Audio/program_error.mp3')
+                            playsound('program_error.mp3')
                         continue
                 else:
                     print("Enter value of x in between 1-9")
@@ -112,18 +112,18 @@ try:
                 if y==1:
                     print("The computer has beaten you")
                     if Sound==True:
-                        playsound('Audio/Loss.wav')
+                        playsound('Loss.wav')
                     quit()
                 
                 elif check==2 and y!=1:
                     print("It is a draw")
                     if Sound==True:
-                        playsound('Audio/boing.mp3')
+                        playsound('boing.mp3')
                     quit()
                 
 except ValueError:
     print("You have entered a non-integral value of x. Program is terminated")
     if Sound==True:
-        playsound('Audio/program_error.mp3')
+        playsound('program_error.mp3')
 
 
