@@ -40,6 +40,7 @@ The general layout of the board is given below:-
 7|8|9
 ,Where the values of boxes will be used in the program.
 I.E. You need to enter 1 to put your sign in 1st box, 5 in 5th box as per above figure. Enjoy!
+*To use sound, install the playsound module first. Guide can be found in the readme file.
 ''')
 Sound=str(input("Do you want to play sound(Needs Playsound Module to be installed) . Use Y/N : "))
 if Sound.upper()=='Y' or Sound.upper()=='YES':
