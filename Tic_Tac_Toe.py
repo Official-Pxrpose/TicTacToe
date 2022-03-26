@@ -1,0 +1,114 @@
+import random,string
+from playsound import playsound
+board={
+        1:' ',2:' ',3:' ',
+        4:' ',5:' ',6:' ',
+        7:' ',8:' ',9:' '
+        }
+def printboard(brd):
+    print(brd[1] +'|'+brd[2]+'|'+brd[3])
+    print('-+-+-')
+    print(brd[4] +'|'+brd[5]+'|'+brd[6])
+    print('-+-+-')
+    print(brd[7] +'|'+brd[8]+'|'+brd[9])
+def checkwinner(board):
+    if board[1]==board[2]==board[3] !=' ':
+        return 1
+    elif board[4]==board[5]==board[6]!=' ':
+        return 1
+    elif board[7]==board[8]==board[9]!=' ':
+        return 1
+    elif board[1]==board[5]==board[9]!=' ':
+        return 1
+    elif board[7]==board[5]==board[3]!=' ':
+        return 1
+    elif board[3]==board[6]==board[9]!=' ':
+        return 1
+    elif board[1]==board[4]==board[7]!=' ':
+        return 1
+    elif board[2]==board[5]==board[8]!=' ':
+        return 1
+def checkdraw(b):
+   if b[1]!=' '  and b[2]!=' ' and b[3]!=' ' and b[4]!=' ' and b[5]!=' ' and b[6]!=' ' and b[7]!=' ' and b[8]!=' ' and b[9]!=' ':
+       return 2
+print('''
+The general layout of the board is given below:-
+1|2|3
+-+-+-
+4|5|6
+-+-+-
+7|8|9
+,Where the values of boxes will be used in the program.
+I.E. You need to enter 1 to put your sign in 1st box, 5 in 5th box as per above figure. Enjoy!
+''')
+v=input("Choose your sign :- X or O . If you choose X , you go first and Vice versa for O : ")
+v=v.upper()
+if v=='X':
+    w='O'
+    c=1
+elif v=='O':
+    w='X'
+    c=0
+else:
+    print("Incorrect value of sign given . Program will be terminated")
+    playsound('Audio/program_error.mp3')
+    quit()
+
+y=0
+check=0
+try:
+    while y!=1 and check!=2:
+        while c<=10:
+            if c%2!=0:
+                x=int(input("Where do you want to place your sign : "))     
+                if x in range(10):
+                    if board[x]==' ' :
+                        board[x]=v
+                        print("Your turn:-",end='\n')
+                        printboard(board)
+                        y=checkwinner(board)
+                        check=checkdraw(board)
+                        if y==1:
+                            print("You have won!")
+                            playsound('Audio/Win.wav')
+                            quit()
+                        elif check==2 and y!=1:
+                            print(" It is a draw")
+                            playsound('Audio/boing.mp3')
+                            quit()
+                    else:
+                        print("Place is occupied")
+                        playsound('Audio/program_error.mp3')
+                        continue
+                else:
+                    print("Enter value of x in between 1-9")
+                    continue
+                    
+                c+=1
+            else:
+                x=random.randint(1,9)
+                if board[x]==' ':
+                    board[x]=w
+                    print("computer's turn:-",end='\n')
+                    printboard(board)
+                    c+=1          
+                else:
+                    continue
+                               
+                y=checkwinner(board)
+                check=checkdraw(board)
+                if y==1:
+                    print("The computer has beaten you")
+                    playsound('Audio/Loss.wav')
+                    quit()
+                
+                elif check==2 and y!=1:
+                    print("It is a draw")
+                    playsound('Audio/boing.mp3')
+                    quit()
+                
+except ValueError:
+    print("You have entered a non-integral value of x. Program is terminated")
+    playsound('Audio/program_error.mp3')
+
+
