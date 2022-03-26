@@ -1,4 +1,4 @@
-# TicTactToe
+# TicTacToe
 Tic Tac Toe game in python                      
 Created By:- Abhigyan Chatterjee                            
 If you want to use sound , Install Playsound module using pip. Guide :- https://pypi.org/project/playsound/                           
