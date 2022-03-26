@@ -41,6 +41,14 @@ The general layout of the board is given below:-
 ,Where the values of boxes will be used in the program.
 I.E. You need to enter 1 to put your sign in 1st box, 5 in 5th box as per above figure. Enjoy!
 ''')
+Sound=str(input("Do you want to play sound(Needs Playsound Module to be installed) . Use Y/N : "))
+if Sound.upper()=='Y' or Sound.upper()=='YES':
+    Sound=True
+elif Sound.upper()=='N' or Sound.upper()=='NO':
+    sound=False
+else:
+    print("Wrong Value entered for sound. Program will be terminated")
+    quit()
 v=input("Choose your sign :- X or O . If you choose X , you go first and Vice versa for O : ")
 v=v.upper()
 if v=='X':
@@ -51,7 +59,8 @@ elif v=='O':
     c=0
 else:
     print("Incorrect value of sign given . Program will be terminated")
-    playsound('Audio/program_error.mp3')
+    if Sound==True:
+        playsound('Audio/program_error.mp3')
     quit()
 
 y=0
@@ -70,15 +79,18 @@ try:
                         check=checkdraw(board)
                         if y==1:
                             print("You have won!")
-                            playsound('Audio/Win.wav')
+                            if Sound==True:
+                                playsound('Audio/Win.wav')
                             quit()
                         elif check==2 and y!=1:
                             print(" It is a draw")
-                            playsound('Audio/boing.mp3')
+                            if Sound==True:
+                                playsound('Audio/boing.mp3')
                             quit()
                     else:
                         print("Place is occupied")
-                        playsound('Audio/program_error.mp3')
+                        if Sound==True:
+                            playsound('Audio/program_error.mp3')
                         continue
                 else:
                     print("Enter value of x in between 1-9")
@@ -99,16 +111,19 @@ try:
                 check=checkdraw(board)
                 if y==1:
                     print("The computer has beaten you")
-                    playsound('Audio/Loss.wav')
+                    if Sound==True:
+                        playsound('Audio/Loss.wav')
                     quit()
                 
                 elif check==2 and y!=1:
                     print("It is a draw")
-                    playsound('Audio/boing.mp3')
+                    if Sound==True:
+                        playsound('Audio/boing.mp3')
                     quit()
                 
 except ValueError:
     print("You have entered a non-integral value of x. Program is terminated")
-    playsound('Audio/program_error.mp3')
+    if Sound==True:
+        playsound('Audio/program_error.mp3')
 
 
