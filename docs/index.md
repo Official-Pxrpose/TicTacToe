@@ -1,12 +1,12 @@
-## Welcome to the LudoAI Page
+## Welcome to the TicTacToe vs AI Page
 
-**This was just done to pass time. **                                
+This was just done to pass time.                               
 
 You can Download and run The program as you wish.                                                   
 *Note :- Audio is finicky In pydroid. If you are using pydroid then disaable audio in the program                                         
 (There will be option to chose if you want audio)                                
-*
-**Download Link : ** [Download](https://github.com/XCalibur5678/TicTacToe/releases/tag/Download)                                  
+
+Download Link : [Download](https://github.com/XCalibur5678/TicTacToe/releases/tag/Download)                                  
 The code (*if you dont want to download the files*). **Dont forget to disable Audio if are copying from here as you dont have the sound file ** :-                                      
 
 ```
