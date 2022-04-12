@@ -126,5 +126,7 @@ except ValueError:
     print("You have entered a non-integral value of x. Program is terminated")
     if Sound==True:
         playsound('program_error.mp3')
-
+'''
+Thanks for playing . This means a lot to me 
+'''
 
